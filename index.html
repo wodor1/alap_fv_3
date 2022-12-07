@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <title>Házi feladat: alap algoritmusok, ciklusok, függvények</title>
+  </head>
+  <body>
+    <h2>Házi feladat: alap algoritmusok, ciklusok, függvények</h2>
+    <b>
+      3. Készíts egy függvényt ami megvizsgálja egy elem összes típusát, és
+      kigyűjti őket egy új tömbbe. pl. ebből a tömbből: <br />
+      const x = ['', 4, true];<br />
+      Egy ilyen tömböt hoz létre:<br />
+      [ 'string', 'number', 'boolean' ]<br />
+      Ehhez először hozz létre egy üres tömböt, és a .push függvénnyel add hozzá
+      a típusokat így (csak tömb elemekkel, nem test változóval):<br />
+      const test = 3;<br />
+      const a = [];<br />
+      a.push(typeof(test));<br />
+    </b>
+
+    <!-- ez a HTML adatkiíratáshoz kell -->
+    <p style="background-color: yellowgreen" id="data1"></p>
+    <p style="background-color: yellowgreen" id="data2"></p>
+
+    <script>
+      // az adattömb: "x", az üres tömb: "a" és a "test" változó a vizsgálathoz
+      const x = ["", 4, true, "apple", 3.14, undefined, NaN];
+      const a = [];
+      let test = "";
+
+      // ez a függvény végigmegy a tömb elemein, és a típusukat tárolja a másik tömbben
+      function typefunc() {
+        for (i = 0; i < x.length; i++) {
+          test = x[i];
+          a.push(typeof test);
+        }
+      }
+
+      typefunc();
+      console.log(x);
+      console.log(a);
+      document.getElementById("data1").innerHTML = "[" + x + "]";
+      document.getElementById("data2").innerHTML = "[" + a + "]";
+    </script>
+  </body>
+</html>
